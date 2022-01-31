@@ -41,6 +41,7 @@ export default {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 }
 @media screen and (min-width: 600px) {
   .card {
