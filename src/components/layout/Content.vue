@@ -7,5 +7,12 @@
 <script>
 export default {
   name: "Content",
+  props: {
+  },
+  data() {
+      return {
+          test: 38,
+      };
+  },
 }
 </script>
