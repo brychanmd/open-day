@@ -59,7 +59,10 @@ export default {
         // Await a response from the fetchData function before updating the openDay data object.
         this.openDay = await this.fetchData();
         // Set the first topic to open by default.
-        this.changeTopic(38);
+        if (this.openDay.topics.length > 0) {
+          let id = this.openDay.topics[0].id;
+          this.changeTopic(id);
+        }
 
     },
 }
