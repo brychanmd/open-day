@@ -45,7 +45,7 @@ export default {
                 hour: '2-digit',
                 minute: '2-digit',
               }
-            )
+            );
         },
         createMapUrl(lat, long) {
           return `https://maps.google.com/?q=${lat},${long}`;

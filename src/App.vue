@@ -1,6 +1,6 @@
 <template>
     <Header 
-      v-if="openDay && Object.keys(openDay).length !== 0"
+      v-if="Object.keys(openDay).length"
       :openDay="openDay" 
       :activeTopic="activeTopic" 
       @filter-change="changeTopic($event)" 
@@ -29,9 +29,9 @@ export default {
     },
     data() {
         return {
-            openDay : {},
+            openDay : null,
             activeTopic : null,
-            expandedTopic : {},
+            expandedTopic : null,
         };
     },
     methods: {
@@ -58,7 +58,8 @@ export default {
     async created() {
         // Await a response from the fetchData function before updating the openDay data object.
         this.openDay = await this.fetchData();
-        // Set the first topic to open by default.
+
+        // Then set the first topic to open by default.
         if (this.openDay.topics.length > 0) {
           let id = this.openDay.topics[0].id;
           this.changeTopic(id);
